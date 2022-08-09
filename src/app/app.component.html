@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-header></app-header>
+      <app-header (tabSelected)="onNavigate($event)"></app-header>
       <hr>
-      <app-recipe></app-recipe>
-      <app-shopping></app-shopping>
+      <app-recipe *ngIf="selectedTab === 'recipe'"></app-recipe>
+      <app-shopping *ngIf="selectedTab !== 'recipe'"></app-shopping>
     </div>
   </div>
 </div>
